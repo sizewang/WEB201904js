@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>局部执行环境</title>
+</head>
+<body>
+	<!-- 局部执行环境
+	每个函数在执行时会创建自己的执行环境,称为局部执行环境
+	局部执行环境也叫函数执行环境,当函数执行完毕后局部执行环境销毁并把控制权返回给之前的执行环境 -->
+</body>
+<script type="text/javascript">
+	var a = 1;
+	function showName () {
+		console.log("showName",a);
+	}
+	showName();
+
+	console.log("hello");
+</script>
+</html>

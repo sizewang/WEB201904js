@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.15考核</title>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	function to2Str(num){	//定义一个用来处理时间的函数
+		return num < 10 ? '0'+num : ''+num;	//运用三元运算，获取函数的返回值，无论是个位，还是两位都会返回出两位
+	}
+	var oBox = document.getElementById('box');	//通过ID获取DOM元素
+	var aImg = oBox.children; 	//获取子元素
+	var timer = 0; 	//定义一个变量，用来控制定时器开关
+	var orderTime = new Date('2018-12-07 19:00:00');//定义一个结束时间
+	var endTime = orderTime.getTime();	//获取目标时间距离格林尼治时间的毫秒数。
+	function time(){ 	//定义一个time函数
+		var allTime = (endTime - Date.now())/1000;//获取实时时间与目标时间的差值,除于1000，取秒数
+		if(allTime <= 0 ){//判断关闭定时器的条件 
+			allTime = 0;//为了结束时不显示负数 当小于0时让时间全部置空等于0
+			clearInterval(timer);//当时间为0时不再执行,所以要清除这个定时器
+		}
+		var oH = parseInt(allTime/3600);	//对时间差值进行运算并取整，得到剩余小时数
+		var oM = parseInt((allTime%3600)/60);	//对时间差值进行运算并取整，得到剩余分钟数
+		var oS = parseInt(allTime%3600)%60;		//对时间差值进行运算并取整，得到剩余秒数
+		var time = to2Str(oH)+to2Str(oM)+to2Str(oS);//得到全部时间后,拼接字符串得到完整的时间
+		for(var i =0;i<aImg.length;i++){//对完整字符串进行遍历
+			aImg[i].src = 'image/'+time.charAt(i)+'.png';//根据得到的完整字符串,将对应的位置上换上图片,让图片跟随获取到的时间同步循环,用来展示时间
+		}
+	}
+	timer = setInterval(time,1000);//开启循环定时器 让循环定时器执行这个函数,并将其名称设置为timer,方便控制	time();//调用time函数,初始化时执行一下time函数，避免一刷新页面就出现00:00:00的情况
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局执行环境</title>
+</head>
+<body>
+	<!-- 全局执行环境
+	在WEB浏览器中全局执行环境是window对象
+	所有全局变量和函数都是做为window对象的属性和方法创建的
+	执行环境中的代码执行完毕后该环境被销毁,保存在其中的变量和函数也随之销毁
+	当应用程序退出(例如关闭页面)时全局执行环境销毁 -->
+</body>
+<script type="text/javascript">
+	var a = 1;
+	function showName(){
+		console.log("tom");
+	}
+
+	console.log(window);
+	
+	showName();
+</script>
+</html>

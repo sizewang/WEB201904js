@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件-单个物体跟随鼠标移动</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: red;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript">
+	var oBox = document.getElementById('box');
+
+	//Dom2级
+	// 注意点
+	// 添加/移除事件处理程序第一个参数为要处理的事件名,如'click'
+	// 添加/移除事件处理程序第二个参数为要事件处理程序的函数
+	// 添加/移除事件处理程序第三个参数为一个布尔值,false表示在冒泡阶段执行,true表示在捕获阶段执行
+	// DOM2事件可以为一个事件指定多个执行程序
+	// 移除事件监听只能是移除有函数名的，不能移除匿名函数的
+
+	// 添加事件处理程序:elem.addEventListener(事件名,执行函数,那个阶段调用)
+
+
+	// oBox.addEventListener("mousedown", function(){
+	// 	console.log('down');//鼠标点击时触发
+	// },false);
+	
+	// oBox.addEventListener("mouseup", function(){
+	// 	console.log('up');//鼠标松开时触发
+	// },false);
+
+
+	// oBox.addEventListener("mousemove", function(){
+	// 	console.log('move');//鼠标移动时触发
+	// },false);
+
+
+
+
+	// document.onmousemove = function(ev){
+	// 	oBox.style.left = ev.clientX + 'px';
+	// 	oBox.style.top = ev.clientY + 'px';
+	// }	//单个物体跟随鼠标移动,只限在可视区范围内
+
+
+
+	document.onmousemove = function(ev){
+		oBox.style.left = getScrollLeft() + ev.clientX + 'px';
+		oBox.style.top = getScrollTop() + ev.clientY + 'px';
+	}	//单个物体跟随鼠标移动,body范围内
+
+
+</script>
+</html>

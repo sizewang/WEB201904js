@@ -1,0 +1,92 @@
+w<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.time{
+			width: 380px;
+			height: 600px;
+			margin: 50px auto;
+			background: #ccc;
+		}
+		ul{
+			overflow: hidden;
+		}
+		ul li{
+			float: left;
+			width: 100px;
+			height: 100px;
+			margin-top: 20px;
+			margin-left: 20px;
+			line-height: 100px;
+			font-size: 30px;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			cursor: pointer;
+		}
+		.active{
+			color: #000;
+			background: #fff;
+		}
+		.plan{
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		.plan p{
+			margin-top: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="time">
+		<ul>
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div class="plan">
+			<h2>1月</h2>
+			<p>睡觉</p>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	var aLi = document.getElementsByTagName('li');  //获取这个标签 
+	var oPlan = document.querySelector('.plan');	//获取这个选择器
+	var arr = ["烧烤","吃饭","打豆豆","去旅游","去游泳","自驾游","睡觉","吃饭","打豆豆","去旅游","去游泳","自驾游"];
+	// console.log(aLi);
+
+	oPlan.innerHTML = "<h2>1月</h2><p>" + arr[0] + "</p>";
+
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for(var j=0; j<aLi.length;j++){
+				aLi[j].className = "";
+			}
+			this.className = "active";
+			oPlan.innerHTML = "<h2>" + (this.index+1) + "月</h2><p>" + arr[this.index] + "</p>";
+		}
+	}
+</script>
+</html>

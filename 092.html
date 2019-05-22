@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window相关事件</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<!-- window相关事件
+	window.onresize 窗口大小发生变化触发
+	window.onscroll 拖动滚动条触发
+	window.onload 页面加载完毕后触发 -->
+</body>
+<script type="text/javascript">
+	window.onresize = function(){
+		console.log(1);
+	}
+
+	window.onscroll = function(){
+		console.log(1)
+	}
+
+
+	var i = 0;
+	window.onload = function(){
+		console.log(++i);
+	}
+
+</script>
+</html>

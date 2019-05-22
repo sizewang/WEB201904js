@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击隐藏父元素</title>
+</head>
+<body>
+	<ul>
+		<li>1<a href="#">隐藏</a></li>
+		<li>2<a href="#">隐藏</a></li>
+		<li>3<a href="#">隐藏</a></li>
+		<li>4<a href="#">隐藏</a></li>
+		<li>5<a href="#">隐藏</a></li>
+	</ul>
+
+
+	<!-- 获取父节点
+	oNode.parentNode,子节点的父节点对象
+	oNode.offsetParent,子节点绝对定位时,获取参考的父节点对象
+	案例:隐藏父元素案例 -->
+</body>
+<script type="text/javascript">
+	var aA = document.getElementsByTagName('a');
+	for(var i = 0;i<aA.length;i++){
+		aA[i].onclick = function(){
+			this.parentNode.style.display = "none";
+		}
+	}
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll相关值</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<!-- scrollLeft,读写属性,表示隐藏在内容区域左侧的宽度,一般指水平滚动距离
+	scrollTop,读写属性,表示隐藏在内容区域上侧的高度,一般指垂直滚动距离
+	scrollWidth,只读属性,表示元素内容的宽度,包括由于滚动而未显示在屏幕中内容
+	scrollHeight,只读属性,表示元素内容的高度,包括由于滚动而未显示在屏幕中内容 -->
+</body>
+<script type="text/javascript">
+	iScrollLeft = document.documentElement.scrollLeft;
+	console.log(iScrollLeft);	//scrollLeft,读写属性,表示隐藏在内容区域左侧的宽度,一般指水平滚动距离
+
+
+	iScrollTop = document.documentElement.scrollTop;
+	console.log(iScrollTop);	//scrollTop,读写属性,表示隐藏在内容区域上侧的高度,一般指垂直滚动距离
+
+
+	iScrollWidth = document.documentElement.scrollWidth;
+	console.log(iScrollWidth);	//scrollWidth,只读属性,表示元素内容的宽度,包括由于滚动而未显示在屏幕中内容
+
+
+	iScrollHeight = document.documentElement.scrollHeight;
+	console.log(iScrollHeight);	//scrollHeight,只读属性,表示元素内容的高度,包括由于滚动而未显示在屏幕中内容
+</script>
+</html>

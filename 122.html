@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ctrl+回车提交</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			margin: 50px auto;
+		}
+		li{
+			list-style: none;
+			line-height: 40px;
+			border-bottom: 1px dotted #ccc;
+			color: pink;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<textarea id="txt" cols="30" rows="10"></textarea>
+		<button id="btn">发布</button>
+		<ul id="list"></ul>
+	</div>
+</body>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript">
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('list');
+
+	oBtn.onclick = function(){
+		var sVal = oTxt.value;
+		var oLi = document.createElement('li');	//生成元素 document.createElement('标签名')
+		oLi.innerHTML = sVal;//在页面中插入获取到的值
+		oLi.style.height = 0;
+		oLi.style.opacity = 0;
+
+		oUl.insertBefore(oLi,oUl.firstChild);
+		animate(oLi,{height:40,opacity:100},true);
+		oTxt.value = "";
+	}
+
+
+	oTxt.onkeydown = function(ev){
+		// console.log(ev.keyCode);//查看键盘上的键代表的数字
+		// console.log(ev.ctrlKey);//按ctrl返回true
+		// console.log(ev.shiftKey);//按shift返回false
+		if(ev.keyCode == 13 && ev.ctrlKey){
+			oBtn.onclick();
+		}
+	}
+
+</script>
+</html>

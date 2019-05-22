@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			color: #fff;
+			font-size: 40px;
+			margin: 100px auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<!-- 距离活动结束还有08小时20分钟50秒结束 -->
+	</div>
+</body>
+<script type="text/javascript">
+	function to2Str(num){    //定义一个用来处理时间的函数
+		return num<10 ? "0" + num : "" + num;  //运用三元运算，获取函数的返回值，无论是个位，还是两位都会返回出两位
+	}
+	var oTimer = document.getElementById('timer'); //获取DOM元素
+	var endTime = new Date("2019-05-17 20:56:10");	//规定一个结束时间
+	var timer = 0;	//定义一个变量，用来控制定时器开关
+
+	function countDwon(){	
+		var allMinSeconds = endTime.getTime() -  Date.now();
+		if(allMinSeconds <=0){
+			allMinSeconds =0;
+			clearInterval(timer);
+		}
+
+		var allSeconds = parseInt(allMinSeconds / 1000);
+		var iHour = parseInt(allSeconds / 3600);
+		var iMinute = parseInt(allSeconds % 3600 / 60);
+		var iSecond = parseInt(allSeconds % 3600 % 60);
+
+		oTimer.innerHTML = "距离活动结束还有" + to2Str(iHour) + "小时" + to2Str(iMinute) + "分钟" + to2Str(iSecond) + "秒"
+	}
+	timer = setInterval(countDwon,1000);
+	countDwon();
+	
+</script>
+</html>

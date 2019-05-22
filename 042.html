@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>var 的使用</title>
+</head>
+<body>
+	<!-- 在函数内部用var声明的变量会添加到当前函数的作用域中 -->
+
+	<!-- 如果变量不用var关键字声明会被添加到全局作用域中,不推荐使用,在严格模式下定义变量不写var会报错 -->
+</body>
+<script type="text/javascript">
+	function fn(){
+		"use strict"
+		a = 1;
+		console.log("fn",a);//1
+	}
+	fn();
+	console.log("global",a);//1
+	
+</script>
+</html>

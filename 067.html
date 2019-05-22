@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM</title>
+</head>
+<body>
+	<!-- 什么是window对象?
+	window对象代表了浏览器的一个实例
+	window对象是全局对象 -->
+</body>
+<script type="text/javascript">
+
+	// 窗口位置
+	// window.screenLeft/window.screenTop 窗口相对于屏幕左边/顶部的距离(IE Chrome Safari Opera)
+	// window.screenX/window.screenY  窗口相对于屏幕左边/顶部的距离(FireFox)
+	console.log('window.screenLeft:::',window.screenLeft);
+	console.log('window.screenTop:::',window.screenTop);
+
+
+
+
+
+	// 浏览器视口宽高(不包含浏览器的边框,如果有滚动条则包括)
+	// window.innerWidth  浏览器视口宽
+	// window.innerHeight 浏览器视口高
+	console.log('innerHeight:::',window.innerHeight);
+	console.log('innerWidth:::',window.innerWidth);
+
+
+
+
+
+	// 浏览器窗口整个自身的宽高(包含浏览器边框)
+	// window.outerWidth
+	// window.outerHeight
+	console.log('window.outerWidth:::',window.outerWidth);
+	console.log('window.outerHeight:::',window.outerHeight);
+
+
+</script>
+</html>

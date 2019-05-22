@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组1</title>
+</head>
+<body>
+	<!-- 定义数组
+	方法1 通过Array构造函数
+var arr = new Array(1,2,3);
+	方法2 通过数组字面量[]
+var arr = [1,2,3]
+	注意点
+		方法1和方法2的作用是一样的,方法2效率上更高一些
+		数组中可以存放不同类型的数据
+		可以通过下标来访问数组中的元素
+		数组的下标是从0开始的
+		可以通过数组的length属性获取到数组的长度
+		数组不需要在定义时确定长度, 后续可以动态增长
+		可以改变数组的length属性,改变后的值是数组的实际长度,可以通过这种方法清空数组 -->
+</body>
+<script type="text/javascript">
+	//array数组
+
+	// var arr = [1,2,3,4,5,6,7,8,9];
+	// console.log(arr);
+
+
+	// 方法1 通过Array构造函数
+	// var arr = new Array(1,2,3);
+
+	// 数组中可以存放不同类型的数据
+	var arr2 = new Array(1,"6",4,true,[1,2,3],9,);
+	console.log(arr2);
+	// console.log(arr2[arr2.length-1]);//9
+	// console.log(arr2.length);//6
+
+
+
+	// 可以改变数组的length属性,改变后的值是数组的实际长度,可以通过这种方法清空数组
+	// arr2.length =0;
+	// console.log(arr2);
+
+	// 数据截取从头开始截取
+	arr2.length =2;
+	console.log(arr2);//1,"6"
+
+
+
+	
+</script>
+</html>

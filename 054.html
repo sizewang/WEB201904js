@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点关系</title>
+</head>
+<body>
+	<!-- 获取子节点
+	oParentNode.childNodes,返回一个数组,包含父节点中的所有文本节点和元素节点
+	oParentNode.children,返回一个数组, 包含父节点中的所有元素节点
+	oParentNode.firstChild和oParentNode.lastChild分别指向childNodes中的第一个和最后一个
+	oParentNode.firstElementChild和oParentNode.lastElementChild分别指向children中的第一个和最后一个 -->
+	
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	
+</body>
+<script type="text/javascript">
+	var oUl = document.getElementById('list');
+
+	var aNodesAll = oUl.childNodes;
+	var aNodesAllElementsAll = oUl.children;
+	var oFirstNode = oUl.firstChild;
+	var oLastNode = oUl.lastChild;
+	var oFirstElementNode = oUl.firstElementChild;
+	var oLastElementNode = oUl.LastElementChild;
+
+
+	console.log("aNodesAll",aNodesAll);
+	console.log("aNodesAllElementsAll",aNodesAllElementsAll);
+	console.log("oFirstNode",oFirstNode);
+	console.log("oLastNode",oLastNode);
+	console.log("oFirstElementNode",oFirstElementNode);
+	console.log("oLastElementNode",oLastElementNode);
+
+
+</script>
+
+</html>

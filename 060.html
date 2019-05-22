@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成元素</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- 生成元素 document.createElement('标签名')
+	该方法会返回一个DOM节点
+	创建的元素并不会插入到页面
+	需要用追加或者插入方法来将新创建的元素插入到页面 -->
+
+
+	
+	<!-- 有错误不能完全运行 -->
+	<button id="btn">添加</button>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		document.createElement("div");
+		var oDiv = document.getElementsByTagName("div");
+		document.body.appendChild(oDiv);
+	}
+</script>
+</html>

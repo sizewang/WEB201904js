@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.line{
+			width: 1px;
+			height: 400px;
+			background: #000;
+			position: absolute;
+			top: 0px;
+			left: 400px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn'); 
+	var oBox = document.getElementById('box');
+	var timer = null;	//先定义一个空变量
+
+	oBtn.onclick = function(){	//点击按钮时触发一个函数
+
+		clearInterval(timer);//先清空这个定时器 防止多次点击停不下来
+
+		timer = setInterval(function(){		//利用循环定时器里面传if else进行判断
+
+			if (oBox.offsetLeft == 400) {
+			//如果满足if条件让oBox.offsetLeft == 400，否则执行else	
+			// offsetLeft,元素的左外边框和参考父元素左内边框的距离
+
+				clearInterval(timer);
+			}else {
+				oBox.style.left = oBox.offsetLeft + 1 + "px"
+				//让盒子以每20毫米移动1px前进
+			}
+		},20)	//20毫秒
+	}
+</script>
+</html>

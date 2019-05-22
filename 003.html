@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内部js写法</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			/* border: 1px solid; */
+			margin: 400px auto;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function toChange(){
+			var obox = document.getElementById('box')
+			obox.style.width='300px'
+			obox.style.height='300px'
+		}
+		function toNormal(){
+			var obox = document.getElementById('box')
+			obox.style.width='100px'
+			obox.style.height='100px'
+		}
+
+		
+
+	</script>
+</head>
+
+
+
+<body>
+
+	<div id="box"  onmouseover="toChange()" onmouseout="toNormal()">
+		
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js计算器</title>
+</head>
+<body>
+	<input type="text" id="text1">
+	+
+	<input type="text" id="text2">
+	-
+	<input type="text" id="text3">
+	*
+	<input type="text" id="text4">
+	/
+	<input type="text" id="text5">
+	=
+	<input type="text" id="text6">
+
+	<button id="btn">计算</button>
+</body>
+
+
+
+<script type="text/javascript">
+	var oBtn =document.getElementById('btn');
+	var oTxt6 =document.getElementById('text6');
+
+	var oTxt1 = document.getElementById('text1');
+	var oTxt2 = document.getElementById('text2');
+	var oTxt3 = document.getElementById('text3');
+	var oTxt4 = document.getElementById('text4');
+	var oTxt5 = document.getElementById('text5');
+
+
+	oBtn.onclick =function(){
+		var oT1 = parseFloat(oTxt1.value);
+		var oT2 = parseFloat(oTxt2.value);
+		var oT3 = parseFloat(oTxt3.value);
+		var oT4 = parseFloat(oTxt4.value);
+		var oT5 = parseFloat(oTxt5.value);
+		
+		// alert(oT1+oT2-oT3*oT4/oT5);
+
+		// console.log(oTxt1.value);
+		// console.log(oTxt2.value);
+		// console.log(oTxt3.value);
+		// console.log(oTxt4.value);
+		// console.log(oTxt5.value);
+		oTxt6.value =oT1+oT2-oT3*oT4/oT5;
+
+	}
+
+	// function count(){
+	// 	var oBtn = document.getElementById('btn').value;
+	// }
+
+</script>
+</html>

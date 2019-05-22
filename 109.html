@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM事件流-下拉菜单</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 400px;
+			background: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<button id="btn">菜单</button>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+
+	// 添加事件处理程序:elem.addEventListener(事件名,执行函数,那个阶段调用)
+	// 添加/移除事件处理程序第一个参数为要处理的事件名,如'click'
+	// 添加/移除事件处理程序第二个参数为要事件处理程序的函数
+	// 添加/移除事件处理程序第三个参数为一个布尔值,false表示在冒泡阶段执行,true表示在捕获阶段执行
+	oBtn.addEventListener('click',function(ev){
+		event.stopPropagation();//阻止事件冒泡
+		oBox.style.display = "block";
+	},false);
+
+	oBox.addEventListener('click',function(ev){
+		event.stopPropagation();//阻止事件冒泡
+	},false);
+
+
+	document.addEventListener('click',function(){
+		oBox.style.display = "none";
+	},false);
+
+</script>
+</html>

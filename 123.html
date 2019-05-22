@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小鸟加速下落</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+			width: 800px;
+			height: 900px;
+			border: 1px solid #000;
+			margin: 0px auto;
+			box-sizing: border-box;
+		}
+		#box1{
+			position: absolute;
+			top: 0;
+			left: 100px;
+			width: 100px;
+			height: 100px;
+		}
+		img{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box1">
+			<img src="images/niao.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// var oBox = document.getElementById('box'); 
+	var oBox1 = document.getElementById('box1');
+	var timer = null;	//先定义一个空变量
+
+	oBox1.onclick = function(){	
+		clearInterval(timer);//清除定时器
+		var iSpeed = 0;
+
+		timer = setInterval(function(){		
+			iSpeed = (oBox1.offsetTop + 40)/10;
+			
+			if(iSpeed > 0){
+				iSpeed = Math.ceil(iSpeed);//向上取整
+			}else {
+				iSpeed = Math.floor(iSpeed);//向下取整
+			}
+
+
+			if (Math.abs(800 - oBox1.offsetTop) < Math.abs(iSpeed)) {
+				oBox1.offsetTop = "700px";
+				clearInterval(timer);
+			}else {
+				oBox1.style.top = oBox1.offsetTop + iSpeed + "px"
+			}
+		},30)	
+
+	}
+
+	oBox1.onkeydown = function(ev){
+		if(ev.keyCode == 13 && ev.ctrlKey){
+			oBox1.onclick();
+		}
+	}
+
+
+
+</script>
+</html>

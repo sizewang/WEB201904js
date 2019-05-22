@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history对象</title>
+</head>
+<body>
+
+	<!-- history对象
+	history对象代表用户上网的记录,从窗口被打开的那一刻算起
+	用法
+		history.go(跳转页面数),跳转页面数是一个整数,负数表示回退,整数表示前进
+		history.back(),回退一页,等价于history.go(-1) 
+		 history.forward(),前进一页,等价于history.go(1) -->
+
+
+	<button id="btn1">前进</button>
+	<button id="btn2">后退</button>
+	<a href="http://www.baidu.com">百度</a>
+</body>
+<script type="text/javascript">
+	var oBtnGo = document.getElementById('btn1');
+	var oBtnBank = document.getElementById('btn2');
+
+	oBtnGo.onclick = function(){
+		window.history.go(1);
+	}
+	oBtnBank.onclick = function(){
+		window.history.go(-1);
+	}
+
+</script>
+</html>

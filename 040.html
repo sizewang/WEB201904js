@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作用域</title>
+</head>
+<body>
+	<!-- 函数作用域
+	块级作用域:在代码块(花括号中的代码)中声明的变量在代码块外不可用
+	函数作用域:在函数内部声明的变量在函数内部以及子函数中都可以使用
+	JS没有块级作用域,而是函数作用域
+	JS中因为是函数作用域,所以有声明提升的现象,即JS函数中用var声明的所有变量(不涉及赋值)都被提前到函数的顶部 -->
+</body>
+<script type="text/javascript">
+	var a = 1;
+	function fn1(){
+		console.log("fn1",a);//1
+	}
+	function fn2(){
+		var a = 2;
+		fn1();
+	}
+	fn2();
+</script>
+</html>

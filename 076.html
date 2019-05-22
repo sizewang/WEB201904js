@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 动画应用实例</title>
+	<style type="text/css">
+		#father {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background: yellow;
+		}
+		#son {
+		  width: 50px;
+		  height: 50px;
+		  position: absolute;
+		  background-color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<p>
+		<button onclick="myMove()">点我</button>
+	</p>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	function myMove(){
+		var elem = document.getElementById("son");
+		var pos = 0;
+		var id = setInterval(frame, 10);//setInterval(函数或者代码字符串,时间)开启循环型定时器
+  	function frame() {
+    if(pos == 350) {
+      clearInterval(id);//clearInterval(定时器的ID) 关闭循环型定时器
+    }else{
+      	pos++; 
+      	elem.style.top = pos + 'px'; 
+      	elem.style.left = pos + 'px'; 
+    }
+  }
+}
+	
+</script>
+</html>

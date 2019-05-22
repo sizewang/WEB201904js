@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画正反向合并</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			top: 50px;
+			left: 800px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.line{
+			width: 1px;
+			height: 400px;
+			background: #000;
+			position: absolute;
+			top: 0px;
+			left: 400px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始</button>
+	<div id="box"></div>
+	<div class="line"></div>
+	<!-- 更改left值完全实现功能 -->
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn'); 
+	var oBox = document.getElementById('box');
+	var timer = null;	
+	var iSpeed = 0;
+
+	oBtn.onclick = function(){	
+		clearInterval(timer);	
+		timer = setInterval(function(){			
+			if(oBox.offsetLeft < 400){
+				 iSpeed = 7;
+			}else{
+				iSpeed = -7;
+			}
+			if(Math.abs(400-oBox.offsetLeft) < Math.abs(iSpeed)) {		
+			oBox.style.left = "400px";
+			clearInterval(timer);
+			}else {
+				oBox.style.left = oBox.offsetLeft + iSpeed + "px";			
+			}
+		},20)	
+
+	}
+
+</script>
+</html>

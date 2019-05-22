@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组排序-字符串</title>
+</head>
+<body>
+	<!-- 数组.sort(比较函数)
+	sort方法默认升序排序数组,该方法会修改原数组并返回原数组
+	sort方法会调用数组中的每一项的toString方法将其转换为字符串后再比较
+	比较函数可以定义数组的排序规则 -->
+</body>
+<script type="text/javascript">
+	//26个字母按照  a--z 的顺序排
+	var arr = ["good","well","apple","boss","fly","name"];
+	console.log(":::1",arr);
+
+	var result = arr.sort();
+	console.log(":::2",arr);
+	console.log(":::3",result);
+</script>
+</html>

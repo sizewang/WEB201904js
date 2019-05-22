@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组基本操作</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var arr = [5,66,78,92,3,44,65,66];
+	console.log(":::1",arr);
+
+
+	// 数组.push(元素) 在数组末尾添加元素,返回添加后数组的长度
+	// result拿到定义数组的返回值
+	// var result = arr.push(33);
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	// 数组.pop()  删除数组的末尾元素,返回删除的元素
+	// var result = arr.pop();
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	// 数组.shift() 删除数组的第一个元素,返回删除的元素
+	// var result = arr.shift();
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+	// 数组.unshift(元素) 把元素添加到数组的头部,返回添加后数组的长度
+	// var result = arr.unshift(3);
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+	// 数组.splice(起始下标,删除个数,插入值1,插入值2...),返回包含从原数组中删除项的新数组,如果没有删除则返回空数组
+	// var result = arr.splice(1,2); // 删除,数组.splice(起始下标,删除个数)
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	// 插入的数字在起始下标的前面
+	// var result = arr.splice(3,0,11,22); // 插入,数组.splice(起始下标,0,插入值1,插入值2...)
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+	// var result = arr.splice(0,2,55,77); // 替换,数组.splice(起始下标,删除个数,插入值1,插入值2...)
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+	// 数组.join(字符) 用指定的字符把数组的每一项连接成字符串并返回,原数组不变
+	// var result = arr.join("+"); 
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+	// 数组1.concat(数组2) 把数组1和数组2合并生成一个新的数组并返回,原数组不变
+	// var result = arr.concat([11,22,33,]); 
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	// 数组.slice(起始下标,结束下标) 基于当前数组创建一个新数组(包含起始数据,不包含结束数据 )并返回,原数组不变
+	// var result = arr.slice(1,6); 
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	// 数组.indexOf(查找项,起始下标) 从数组头部开始向后查找,返回查找到全等匹配的数组的下标,如果没有找到返回-1
+	// var result = arr.indexOf("66",0); 
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+
+
+	// 数组.lastIndexOf(查找项,起始下标) 从数组尾部开始向前查找,返回查找到全等匹配的数组的下标,如果没有找到返回-1
+	// var result = arr.lastIndexOf("66",7); 
+	// console.log(":::2",arr);
+	// console.log(":::3",result);
+
+
+	
+
+</script>
+</html>

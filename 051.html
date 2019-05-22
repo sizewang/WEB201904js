@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重</title>
+</head>
+<body>
+	<!-- 用原始数组中的每一项和目标数组中每一项比较
+	如果有相等的值存在说明在原始数组中是重复值,则不添加该值
+	如果整个目标数组都没有相等的值说明当前原数组的值不是重复值,则添加 -->
+</body>
+<script type="text/javascript">
+	// var arr = [3,4,6,8,9,4,5,6,8,];
+
+	// console.log("::1",arr);
+	// function unqiue(arr){
+	// 	var result = [];
+	// 	function 
+	// }
+
+
+	var arr = [1,12,13,24,35,23,12,24,13,15,17];
+	console.log(":::1",arr);
+
+	function unique(arr){
+		var result = [];
+		for(var i = 0;i<arr.length;i++){
+			var isTure = false;
+			for(var j = 0;j<result.length;j++){
+				if(arr[i] == result[j]){
+					isTure = true;
+					break;
+				}		
+			} 
+			if(!isTure){
+				result.push(arr[i]);
+			}
+		}
+		return result;
+	}
+	var result = arr.sort();
+	console.log(":::2",arr);
+	// console.log(":::3",result);
+
+	var newArr = unique(arr);
+	// console.log(":::2",arr);
+	console.log(":::3",newArr);
+
+</script>
+</html>

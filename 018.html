@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>与 或  非</title>
+</head>
+<body>
+	<!-- 逻辑
+	非(!)
+		格式: ! 条件A;
+		运算结果:真变假,假变真
+		注意点
+			可以多次连续使用逻辑非运算符
+			逻辑非运算符返回布尔值
+	与(&&)
+		格式: 条件A && 条件B;
+		运算结果:一假则假
+		运算过程
+			如果条件A不成立, 则返回条件A的数值本身
+			如果条件A成立, 不管条件B成不成立都返回条件B数值本身
+	或(||)
+		格式:条件A || 条件B;
+		运算结果:一真则真
+		运算过程
+			如果条件A不成立, 则不管条件B成不成立都返回条件B数值本身
+			如果条件A成立, 则返回条件A的数值本身 -->
+</body>
+<script type="text/javascript">
+	console.log(1 || 0);//1
+	console.log(0 || 0);//0
+	console.log(1 || 2);//1
+	console.log(2 || 1);//2
+	console.log(0 || 1);//1
+
+
+
+	console.log(1 && 0);//0
+	console.log(1 && 1);//1
+	console.log(0 && 1);//0
+
+
+</script>
+</html>

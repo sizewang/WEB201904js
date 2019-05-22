@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成和追加元素案例</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 生成元素 document.createElement('标签名')
+	该方法会返回一个DOM节点
+	创建的元素并不会插入到页面
+	需要用追加或者插入方法来将新创建的元素插入到页面 -->
+
+	<!-- 追加元素 parentNode.appendChild(node)
+	将指定节点追加到父节点的最后面
+	appendChild会把要追加的节点从原父节点中删除 -->
+	
+	<!-- 案例
+		获取输入框的值插入到无序列表的后面
+		按无序列表项中值对列表排序 -->
+	
+	<!-- create 创造 -->
+
+		<button id="btn">添加</button>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oDiv = document.createElement("div"); //生成元素 document.createElement
+		console.log(oDiv);
+
+		document.body.appendChild(oDiv); //追加元素 parentNode.appendChild(node)
+
+	}
+
+	
+</script>
+</html>

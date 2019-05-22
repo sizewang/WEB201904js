@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素</title>
+</head>
+<body>
+	<!-- 获取元素
+	document.getElementById('id名称') 选择第一个匹配的节点
+	dom元素.getElementsByTagName('标签名称') 选择所有匹配的节点
+	dom元素.querySelector(选择器) 选择第一个匹配的节点
+	dom元素.querySelectorAll(选择器) 选择所有匹配的节点
+	注意点
+		dom元素可以是获取的节点也可以是document
+		选择器是css中的任何选择器 -->
+
+	<div id="box" class="box"></div>
+
+</body>
+<script type="text/javascript">
+	var oBox = document.getElementById('box'); 
+	// 选择第一个匹配的节点
+
+	var oBox1 = document.getElementsByTagName('div')[0];
+	// 选择所有匹配的节点
+
+	// var oBox = document.querySelectorAll('.box');
+	// 选择所有匹配的节点
+
+	// var oBox1 = document.querySelector('.box');
+	// 选择第一个匹配的节点
+	
+	console.log(oBox);
+	console.log(oBox1);
+</script>
+</html>

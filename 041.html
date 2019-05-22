@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	
+	<!-- 闭包
+	子函数可以使用父函数中的变量 -->
+
+	
+</body>
+<script type="text/javascript">
+	function fn1(){
+		var a =1;
+		console.log("fn1",a);
+
+		function fn2(){
+
+			console.log("fn2",a);
+		}
+		function fn3(){
+			function fn4(){
+				fn2();//1
+			}
+			fn4();
+		}
+		fn3();
+	}
+	fn1();//1
+</script>
+</html>

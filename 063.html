@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除元素</title>
+</head>
+<body>
+	<ul id="list">
+		<li>1<a href="#">删除</a></li>
+		<li>2<a href="#">删除</a></li>
+		<li>3<a href="#">删除</a></li>
+		<li>4<a href="#">删除</a></li>
+		<li>5<a href="#">删除</a></li>
+		<li>6<a href="#">删除</a></li>
+	</ul>
+
+
+	<!-- 删除元素 parentNode.removeChild(node)
+	在父元素中删除指定的子节点 -->
+	
+
+
+	<!-- 周日页面从 63开始 -->
+</body>
+<script type="text/javascript">
+	var oUl = document.getElementById('list')
+	var aA = document.getElementsByTagName('a');
+	
+	for(var i = 0;i<aA.length;i++){
+		aA[i].onclick = function(){
+			oUl.removeChild(this.parentNode);//删除父元素的子节点
+		}
+	}
+
+
+
+</script>
+</html>

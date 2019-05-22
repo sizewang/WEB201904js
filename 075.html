@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环型定时器</title>
+</head>
+<body>
+	<button>关闭</button>
+</body>
+<script type="text/javascript">
+
+	// setInterval(函数或者代码字符串,时间) 开启循环型定时器,返回一个唯一的整型数字代表定时器的ID
+	// setInterval("console.log('11')",2000);
+
+
+	function showNum(){
+		console.log('123')
+	}
+
+	setInterval(showNum,2000);
+
+	// clearInterval(timer);
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域链</title>
+</head>
+<body>
+	<!-- 作用域链
+	内部执行环境可以通过一个链条向上搜索作用域中的变量或者函数,这个链条就是作用域链
+	任何执行环境不能沿着作用域链向下搜索作用域中的变量或者函数 -->
+</body>
+<script type="text/javascript">
+	var a = 11;
+	var b = 22;
+	var c = 33;
+	function fn1(){
+		var b = 2;
+		console.log("fn1",a);//11
+		console.log("fn1",b);//2
+		function fn2(){
+			var b = 4;
+			var c = 3;
+			console.log("fn2",a);//11
+			console.log("fn2",b);//4
+			console.log("fn2",c);//3
+		}
+		fn2();
+	}
+	fn1();
+
+</script>
+</html>

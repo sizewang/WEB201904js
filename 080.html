@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.14考核</title>
+</head>
+<body>
+	<!-- 今日考核  写一段程序 要求有同步程序也有异步程序（并且要有两种不同类型的异步程序 -->
+
+	<!-- JavaScript中的常见异步任务
+			Ajax
+			DOM事件
+			定时器
+			Promise 
+		-->
+
+	<button id="btn">测试</button>
+</body>
+<script type="text/javascript">
+
+	var oBtn = document.getElementById('btn');
+	var i = 0;
+
+	oBtn.onclick = function(){
+		i++;
+		console.log("click:::",i);	//点击
+	}
+	
+	// var i = 2;
+
+	setTimeout(function(){
+		console.log("stime",i);
+	},4000)		//延迟
+
+	setInterval(function(){
+		console.log("timer",i);
+	},10000)		//循环
+
+	i++
+
+</script>
+</html>

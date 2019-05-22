@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数字时钟</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			color: #fff;
+			font-size: 36px;
+			margin: 100px auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<!-- 18:15:22 -->
+		<!-- 获取电脑当前时间 -->
+	</div>
+</body>
+<script type="text/javascript">
+	function to2str(num){
+		return num<10 ?  "0" + num : "" + num;
+	}
+	var aTimer = document.getElementById('timer');
+	function showTime(){
+		var today = new Date();
+		var iHour = today.getHours();
+		var iMinute = today.getMinutes();
+		var iSecond = today.getSeconds();
+		timer.innerHTML = to2str(iHour) + ":" +  to2str(iMinute) + ":" + to2str(iSecond);
+	}
+	setInterval(showTime, 1000);
+
+</script>
+</html>

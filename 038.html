@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局变量</title>
+</head>
+<body>
+	<!-- 全局变量
+	定义在所有函数外面,所有的函数都可以使用的变量 -->
+</body>
+<script type="text/javascript">
+	// var a = 1;
+	// function fn(){
+	// 	console.log("fn",a);//1
+	// 	function fn1(){
+	// 		console.log("fn1",a);//1
+	// 	}
+	// 	fn1();
+	// }
+	// fn();
+
+	// console.log("global",a);//1
+
+
+
+	var a = 1;
+	function fn(){
+		//var a ;
+		// 系统默认把变量提到第一行，但并没有赋值，所以在变量上的函数得不到,会输出undefind
+	 	console.log("fn",a);//undefind
+	 	
+	 	var a = 2;
+	 	function fn1(){
+	 		console.log("fn1",a);//2
+	 	}
+	 	fn1();
+		}
+	console.log("global1",a);//1
+
+	fn();
+
+	 console.log("global2",a);//1
+
+
+
+</script>
+</html>

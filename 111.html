@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件-多个物体跟随鼠标移动</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			font-size: 30px;
+			color: red;
+			line-height: 100px;
+			/* background: pink; */
+			/* opacity: 0.1; */
+			/* background-image: url('images/douyu.jpg');
+			background-repeat: no-repeat;
+			background-size: cover; */
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		div:nth-child(1){
+			z-index: 10;
+		}
+		div:nth-child(2){
+			z-index: 9;
+		}
+		div:nth-child(3){
+			z-index: 8;
+		}
+		div:nth-child(4){
+			z-index: 7;
+		}
+		div:nth-child(5){
+			z-index: 6;
+		}
+		div:nth-child(6){
+			z-index: 5;
+		}
+		div:nth-child(7){
+			z-index: 4;
+		}
+		div:nth-child(8){
+			z-index: 3;
+		}
+		div:nth-child(9){
+			z-index: 2;
+		}
+	</style>
+</head>
+<body>
+	<div>我</div>
+	<div>爱</div>
+	<div>编</div>
+	<div>程</div>
+	<div>我</div>
+	<div>爱</div>
+	<div>敲</div>
+	<div>代</div>
+	<div>码</div>
+	<div>哈</div>
+
+</body>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript">
+	var aBox = document.getElementsByTagName('div');
+
+	// onmousemove 鼠标移动
+	document.onmousemove = function(ev){ 
+		//先让第一个跟随鼠标移动
+		aBox[0].style.left = getScrollLeft() + ev.clientX + 'px';
+		aBox[0].style.top = getScrollTop() + ev.clientY + 'px';
+		
+
+		for(var i=aBox.length-1; i>0;i--){//用for循环,让后一个始终比前一个的左边和上边多20px
+			aBox[i].style.left =aBox[i-1].offsetLeft + 25 + 'px';
+			aBox[i].style.top = aBox[i-1].offsetTop + 25 + 'px';
+		}
+	}
+
+</script>
+</html>

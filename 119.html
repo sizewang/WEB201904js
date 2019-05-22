@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position: relative;
+			margin: 50px 100px;
+		}
+		li{
+			list-style: none;
+		}
+		#bigbox{
+			position: relative;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #000;
+			box-sizing: border-box;
+		}
+		#mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 250px;
+			height: 250px;
+			background-color: rgba(255, 255, 0, 0.4);
+			cursor: move;
+			display: none;
+		}
+		#bigbox img{
+			width: 100%;
+			height: 100%;
+		}
+		#smallbox li{
+			float: left;
+			width: 54px;
+			height: 54px;
+			margin-right: 15px; 
+			opacity: 0.5;
+		}
+		#smallbox li.active{
+			border: 3px solid #f00;
+			opacity: 1;
+		}
+		#largebox{
+			position: absolute;
+			top: 0;
+			left: 452px;
+			width: 600px;
+			height: 600px;
+			border: 1px solid #000;
+			overflow: hidden;
+			/* display: none; */
+		}
+		#largebox img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}	
+	/* 未完待续 */
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bigbox">
+			<img src="images/p_b_0001.jpg">
+			<div id="mask"></div>
+		</div>
+		<ul id="smallbox">
+			<li class="active"><img src="images/p_s_0001.jpg" alt=""></li>
+			<li><img src="images/p_s_0002.jpg" alt=""></li>
+			<li><img src="images/p_s_0003.jpg" alt=""></li>
+		</ul>
+		<div id="largebox">
+			<img src="images/p_l_0001.jpg" alt="">
+			<img src="images/p_l_0002.jpg" alt="">
+			<img src="images/p_l_0003.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var oWrap = document.getElementById('wrap');
+	var oBigBox = document.getElementById('bigbox');
+	var oBigImg = document.getElementById('#bigbox img');
+	var oLargeBox = document.getElementById('largebox');
+	var oLargeImg = document.querySelector('#largebox img');
+	var oMask = document.getElementById('mask');
+	var aSmallImgs = document.querySelectorAll('#smallbox li');
+
+
+	//给每个li监听一个事件
+	for(var i = 0; i < aSmallImgs.length; i++){
+		aSmallImgs[i].index = i;//存i值
+		aSmallImgs[i].onmouseover = function(){
+			for(var j = 0; j<aSmallImgs.length; j++){
+				aSmallImgs[j].className = "";
+			}
+			this.className = "active";
+			oBigImg.src="images/p_b_000" + (this.index+1) + ".jpg";
+			oLargeImg.src="images/p_l_000" + (this.index+1) + ".jpg";
+		}
+	}
+</script>
+</html>

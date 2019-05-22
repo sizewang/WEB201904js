@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画-发布动画</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			display: inline-block;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<textarea id="txt"></textarea>
+		<button id="btn">发布</button>
+		<ul id="list">
+			
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript">
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('list');
+
+	oBtn.onclick = function(){
+		var sVal = oTxt.value;
+		var oLi = document.createElement('li');
+		oLi.innerHTML = sVal;
+
+		oUl.insertBefore(oLi,oUl.firstChild);
+		animate(oLi,{height:40,opacity:100},true);
+		oTxt.value = "";
+
+	}  
+
+</script>
+</html>
