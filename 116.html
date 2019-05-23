@@ -41,7 +41,7 @@
 	var oSon = document.getElementById('son');
 	var oBox = document.getElementById('box');
 
-	oSon.onmousedown = function(ev){
+	oSon.onmousedown = function(ev){	//ev.clientX 代表鼠标水平方向上到窗口的距离
 		var disX = ev.clientX - oSon.offsetLeft;
 		var l = 0;
 		

@@ -8,7 +8,7 @@
 			margin: 0;
 			padding: 0;
 		}
-		#box{
+		#box3{
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -19,21 +19,21 @@
 	</style>
 </head>
 <body>
-	<div id="box"></div>
+	<div id="box3"></div>
 </body>
 <script type="text/javascript">
-	var oBox = document.getElementById("box");
+	var oBox3 = document.getElementById("box3");
 
 	document.onkeydown = function(ev){
 		if(ev.keyCode == 39){
-			oBox.style.left = oBox.offsetLeft + 30 + "px";
+			oBox3.style.left = oBox3.offsetLeft + 30 + "px";
 		}else if(ev.keyCode == 37){
-			oBox.style.left = oBox.offsetLeft - 30 + "px";
+			oBox3.style.left = oBox3.offsetLeft - 30 + "px";
 		}
 		if(ev.keyCode == 38){
-			oBox.style.top = oBox.offsetTop - 30 + "px";
+			oBox3.style.top = oBox3.offsetTop - 30 + "px";
 		}else if(ev.keyCode == 40){
-			oBox.style.top = oBox.offsetTop + 30 + "px";
+			oBox3.style.top = oBox3.offsetTop + 30 + "px";
 		}
 
 

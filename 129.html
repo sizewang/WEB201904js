@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成随机数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// Math.random() 返回0到1之间的伪随机数.包括0但是不包括1
+	function getRandom(min,max){
+		return Math.round(min+(max-min)*Math.random());
+	}
+
+	console.log(getRandom(200,300));
+</script>
+</html>

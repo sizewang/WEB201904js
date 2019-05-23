@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>只能输入数字</title>
+</head>
+<body>
+	输入身份证号:<input type="text" name="" id="txt" autocomplete="off">
+</body>
+<script type="text/javascript">
+	var oTxt = document.getElementById('txt');
+
+	document.onkeydown = function(ev){
+		console.log(ev.keyCode);	//查看键盘按钮对应的数字
+		if((ev.keyCode < 96 || ev.keyCode > 105) && ev.keyCode !=8 && ev.keyCode != 37 && ev.keyCode != 39){
+			return false;
+		}
+
+
+
+	}
+</script>
+</html>

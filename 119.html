@@ -55,7 +55,7 @@
 			height: 600px;
 			border: 1px solid #000;
 			overflow: hidden;
-			/* display: none; */
+			display: none;
 		}
 		#largebox img{
 			position: absolute;
@@ -78,22 +78,20 @@
 		</ul>
 		<div id="largebox">
 			<img src="images/p_l_0001.jpg" alt="">
-			<img src="images/p_l_0002.jpg" alt="">
-			<img src="images/p_l_0003.jpg" alt="">
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
 	var oWrap = document.getElementById('wrap');
 	var oBigBox = document.getElementById('bigbox');
-	var oBigImg = document.getElementById('#bigbox img');
+	var oBigImg = document.querySelector('#bigbox img');
 	var oLargeBox = document.getElementById('largebox');
 	var oLargeImg = document.querySelector('#largebox img');
 	var oMask = document.getElementById('mask');
 	var aSmallImgs = document.querySelectorAll('#smallbox li');
 
 
-	//给每个li监听一个事件
+	//1.给每个li监听一个事件   
 	for(var i = 0; i < aSmallImgs.length; i++){
 		aSmallImgs[i].index = i;//存i值
 		aSmallImgs[i].onmouseover = function(){
@@ -104,6 +102,47 @@
 			oBigImg.src="images/p_b_000" + (this.index+1) + ".jpg";
 			oLargeImg.src="images/p_l_000" + (this.index+1) + ".jpg";
 		}
+	}
+
+	//2.给大盒子监听事件
+	oBigBox.onmouseover = function(){	//鼠标移入让它出现
+		oMask.style.display = "block";
+		oLargeBox.style.display = "block";
+
+
+	//3.给蒙版监听事件
+	oMask.onmousemove = function(ev){
+		var l = ev.clientX - oMask.offsetWidth*0.5 - oWrap.offsetLeft
+		var t = ev.clientY - oMask.offsetHeight*0.5 - oWrap.offsetTop
+
+		//將蒙版限制在父容器中
+		if(l < 0 ){
+			l = 0;
+		}else if(l > oBigBox.offsetWidth - oMask.offsetWidth){
+			l = oBigBox.offsetWidth - oMask.offsetWidth
+		}
+		if(t < 0 ){
+			t = 0;
+		}else if(t > oBigBox.offsetHeight - oMask.offsetHeight){
+			t = oBigBox.offsetHeight - oMask.offsetHeight
+		}
+
+		//计算出盒子的拖动距比例
+		var percentX = l /(oBigBox.offsetWidth - oMask.offsetWidth);//蒙版的水平拖动距离
+		var percentY = t /(oBigBox.offsetHeight - oMask.offsetHeight);//蒙版的垂直拖动距离
+
+		oLargeImg.style.top = (oLargeBox.offsetHeight - oLargeImg.offsetHeight) * percentY + "px";
+		oLargeImg.style.left = (oLargeBox.offsetWidth - oLargeImg.offsetWidth) * percentX + "px";
+
+		oMask.style.left = l + "px";
+		oMask.style.top = t + "px";
+	}
+
+	}
+
+	oBigBox.onmouseout = function(){	//鼠标移出让它消失
+		oMask.style.display = "none";
+		oLargeBox.style.display = "none";
 	}
 </script>
 </html>
