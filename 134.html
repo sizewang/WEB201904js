@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象-键盘事件属性</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 键盘属性
+	event.keyCode 键盘编码
+	event.ctrlKey Ctrl键
+	 event.shiftKey Shift键
+	 event.altKey Alt键 -->
+</body>
+<script type="text/javascript">
+
+	document.onkeydown = function(ev){	//在文档对象中按键盘按钮，触发按键数字编码
+		console.log('event.keyCode',event.keyCode);
+		console.log('event.ctrlKey',event.ctrlKey);
+		console.log('event.shiftKey',event.shiftKey);
+		console.log('event.altKey',event.altKey);
+	
+	}
+
+
+</script>
+</html>

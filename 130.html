@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list"> 
+		<li>1<a class="del" href="#">删除</a></li>
+		<li>2<a class="del" href="#">删除</a></li>
+		<li>3<a class="del" href="#">删除</a></li>
+		<li>4<a class="del" href="#">删除</a></li>
+		<li>5<a class="del" href="#">删除</a></li>
+		<li>6<a class="del" href="#">删除</a></li>
+	</ul>
+	<button id="btn">添加</button>
+
+</body>
+<script type="text/javascript">
+	// var aA = document.getElementsByTagName('a');
+	// 事件委托
+	// 事件委托是利用了事件冒泡原理,在父元素上监听事件,来处理子元素
+	// 事件委托的好处
+	// 	减少绑定DOM事件
+	// 	动态添加的DOM元素也可以有事件处理
+	// 案例:删除父元素
+
+
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oDiv = document.createElement("div"); //生成元素 document.createElement
+		console.log(oDiv);
+
+		document.body.appendChild(oDiv); //追加元素 parentNode.appendChild(node)
+
+	}
+
+
+
+	var oUl = document.getElementById('list');
+	oUl.onclick = function(ev){
+		var oTarget = ev.target;
+		if(oTarget.className == "del")
+		oUl.removeChild(oTarget.parentNode); 
+
+	}
+
+
+
+</script>
+</html>

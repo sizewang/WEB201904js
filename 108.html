@@ -9,17 +9,17 @@
 			padding: 0;
 		}
 		#box{
-			display: inline-block;
+			width: 400px;
 			margin: 50px auto;
 		}
 	</style>
 </head>
 <body>
 	<div id="box">
-		<textarea id="txt"></textarea>
+		<textarea id="txt" cols="30" rows="10"></textarea>
 		<button id="btn">发布</button>
 		<ul id="list">
-			
+
 		</ul>
 	</div>
 </body>
@@ -28,6 +28,7 @@
 	var oTxt = document.getElementById('txt');
 	var oBtn = document.getElementById('btn');
 	var oUl = document.getElementById('list');
+	
 
 	oBtn.onclick = function(){
 		var sVal = oTxt.value;
@@ -39,6 +40,7 @@
 		oTxt.value = "";
 
 	}  
+
 
 </script>
 </html>

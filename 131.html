@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象-共通事件属性</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 400px;
+			height: 400px;
+			background: red;
+			margin: 100px auto;
+			overflow: hidden;
+		}
+		#son{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+	<!-- 共通事件属性
+	event.currentTarget 绑定事件的对象
+	event.target 事件源对象,即触发事件的对象
+	event.type 现在的事件类型是什么 -->
+</body>
+<script type="text/javascript">
+	var oFather = document.getElementById('father');
+	var oson = document.getElementById('son');
+
+	oFather.onclick = function(ev){
+		console.log(event.target);//event.target 事件源对象,即触发事件的对象
+		console.log(event.currentTarget);//event.currentTarget 绑定事件的对象
+		console.log(event.type);//event.type 现在的事件类型是什么
+	}
+</script>
+</html>
