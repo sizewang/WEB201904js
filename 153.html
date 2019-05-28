@@ -11,9 +11,9 @@
 	// 体验案例:从字符串中找出数字,原始方法和正则的比较,正则为:str.match(/\d+/g)
 
 	var str = "abc 123 wkk 456 lme 789";
-
-	// console.log(str.match(/\d+/g));//g=global
-	console.log(str.replace(/\d+/g),"*");
+	// \d代表一个数字    \d+代表一个或多个数字		g=global代表全局匹配
+	// console.log(str.match(/\d+/g));//g=global,match相同的
+	console.log(str.replace(/\d+/g,"*"));//replace代替,把数字代替成*
 
 </script>
 </html>

@@ -36,7 +36,6 @@
 		}
 	</style>
 </head>
-	<!-- 视频看到26分 -->
 <body>
 	<ul id="tab-btn1" class="tab-btn">
 		<li class="active">热门</li>
@@ -50,6 +49,7 @@
 		<li>3</li>
 		<li>4</li>
 	</ul>
+	
 	
 	<ul id="tab-btn2" class="tab-btn">
 		<li class="active">热门</li>
@@ -105,10 +105,10 @@
 	//Tab.prototype,Tab原型对象上有fnClick方法
 	Tab.prototype.fnClick = function(oBtn){ //oBtn指具体的每个li
 		for(var j=0; j<this.aBtns.length;j++){
-			this.aBtns[j].className = "";
+			this.aBtns[j].className = "";	//把每个li上面的类选择器先清空掉
 			this.aContents[j].style.display = "none";//先清空所有
 		}
-		oBtn.className = "active";	//点击谁把active添加给谁
+		oBtn.className = "active";	//点击谁把active类选择器添加给谁
 		this.aContents[oBtn.index].style.display = "block";//点击谁把active添加给谁,把下面的显示出来
 	}
 

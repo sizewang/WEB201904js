@@ -5,20 +5,46 @@
 	<title>原子筛选</title>
 </head>
 <body>
-	<input type="text" name="" id="txt">
+	<input type="text" name="" id="txt" autocomplete="off">
 	<button id="btn">发布</button>
 	<ul id="list">
 		
 	</ul>
 </body>
 <script type="text/javascript">
+	// |   竖线两边任意匹配
+	// []  括号中任意一个原子,可以写区间(闭区间),如[a-z0-9]
+	// [^] 括号中任意一个原子之外的原子
+	// 注意点
+	// 	一般情况下,正则中的一个字符对应字符串中的一个字符, 例如:/ab\t/表示字符串中连续出现字符 ab制表符 
+
+	// var str = "abc edf ghi dsa";
+	// var reg1 = /a/g;		// 方法二(字面量): /规则/修正模式 如:var reg = /a/g
+	// var reg2 = /a|b/g;		// |   竖线两边任意匹配
+	// var reg3 = /a|b|f|s/g;
+
+	// console.log(str.replace(reg1,"*"));
+	// console.log(str.replace(reg2,"*"));
+	// console.log(str.replace(reg3,"$"));
+
+
+
+
 	var oTxt = document.getElementById('txt');
 	var oBtn = document.getElementById('btn');
-	var oList = document.getElementById('list');
+	var oUl = document.getElementById('list');
 
 
 	oBtn.onclick = function(){
-		var sVal = oTxt.value;
+		var val = oTxt.value;
+		var oLi = document.createElement('li');//生成li
+		var reg = /淘宝|某宝|掏宝/g;
+		var newVal = val.replace(reg,"*");
+		oLi.innerHTML = newVal;//把获取到的值插入到页面中
+
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oTxt.value = "";
+
 	}
 
 
