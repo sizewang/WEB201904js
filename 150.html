@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式--动态原型模式</title>
+</head>
+<body>
+	<!-- 对象返回布尔值为真 -->
+</body>
+<script type="text/javascript">
+			// 动态原型模式
+	// 把原型对象prototype上的定义写在构造函数中
+	// 定义之前需要唯一执行判断 
+
+	// new自动做的两件事
+	//var xxx = {};
+	//this = xxx;
+
+	function createPerson(name,age){
+		this.name = name;
+		this.age = age;
+		if(!createPerson.prototype.sayName){//先进行判断,如果没有sayName方法再执行判断语句.
+			createPerson.prototype.sayName = function(){
+				console.log("I am " +this.name);
+			}
+		}
+
+		if(!createPerson.prototype.sayAge){//先进行判断,如果没有sayAge方法再执行判断语句.
+			createPerson.prototype.sayAge = function(){
+				console.log("I am " +this.age+" years old")
+				}
+			}
+		}
+		
+	var person1 = new createPerson("tom",18);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1);
+
+	var person2 = new createPerson("leo",20);
+	person2.sayName();
+	person2.sayAge();
+	console.log(person2);
+
+
+	console.log(person1.sayName == person2.sayName);//相等
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用Object来创建对象</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 缺点
+	// Object是所有对象的父类
+	// 创建的对象方法和属性不能共用
+	//一般情况下不用父类创建对象
+
+	var person1 = new  Object();
+
+	person1.name = "tom";
+	person1.age = 20;
+	person1.sayName = function(){	// 创建的对象方法和属性不能共用
+		console.log("I am" + this.name);
+	}
+
+	var person2 = new  Object();
+
+	person2.name = "tom";
+	person2.age = 20;
+	person2.sayName = function(){	// 创建的对象方法和属性不能共用
+		console.log("I am" + this.name);
+	}
+
+	console.log(person1);
+	console.log(person2);
+
+
+
+
+
+</script>
+</html>

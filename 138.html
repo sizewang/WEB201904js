@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建自定义对象--字面量创建</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//创建一个对象,有以下属性
+	var obj = {
+		name : "anni",
+		age : 20,
+		friends : ["peng","ming"],
+		sayHi : function(){
+			console.log('I am' + this.name);//注意:函数调用时属于谁,函数中的this就是谁
+		}
+	}
+	console.log(obj);
+
+</script>
+</html>

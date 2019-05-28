@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new + 工厂函数</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 注意点
+	// 工厂模式函数中创建对象和返回对象省略,用this代替
+	// 用new后,把工厂模式函数可以看做是类,类名一般首字母大写
+
+	function createPerson(name,age){	
+		this.name = name;
+		this.age = age;
+		this.sayName = function(){
+			console.log("I am" + this.name);
+		}
+		this.sayAge = function(){
+			console.log("I am" + this.age + "years old");
+		}
+		return this;
+	}
+
+	// var obj = new createPerson();
+
+	var person1 = new createPerson("tom",18);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1);
+
+	var person2 = new createPerson("leo",20);
+	person2.sayName();
+	person2.sayAge();
+	console.log(person2);
+</script>
+</html>

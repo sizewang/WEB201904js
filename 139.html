@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象属性特征的应用---去除重复数组</title>
+</head>
+<body>
+	<!-- 对象属性的特征-----无序唯一 -->
+</body>
+<script type="text/javascript">
+	//用点的地方可以用中括号代替,但是点不能代替中括号
+	//中括号里面可以放变量
+	var arr = [3,6,12,45,47,56,58,3,6,12];
+	console.log(arr);
+
+
+	function uniqurArr(arr){//定义一个函数
+		var result = [];//定义一个新的空数组
+		var obj = {};//定义一个新的空对象
+		for(var i = 0; i<arr.length; i++){//用for循环把数组转化为对象的属性
+			obj[arr[i]] = "ha";//给对象里的每个属性赋一个值
+		}
+
+		
+		for(arr in obj){	//for/in - 循环遍历对象的属性
+			result.push(arr*1);//字符串*数字  利用隐式转换,转换成数字
+		}
+
+		return result;//返回这个转换后的新数组
+	}
+
+	console.log(uniqurArr(arr));
+
+</script>
+</html>

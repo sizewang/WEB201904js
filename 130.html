@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>事件委托</title>
+	<title>事件委托-添加-删除</title>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -48,11 +48,12 @@
 
 
 
+	//事件委托删除父元素
 	var oUl = document.getElementById('list');
 	oUl.onclick = function(ev){
-		var oTarget = ev.target;
+		var oTarget = ev.target;//event.target 事件源对象,即触发事件的对象
 		if(oTarget.className == "del")
-		oUl.removeChild(oTarget.parentNode); 
+		oUl.removeChild(oTarget.parentNode); //删除元素 parentNode.removeChild(node)
 
 	}
 

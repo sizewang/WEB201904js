@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式--构造原型模式</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//原型 prototype 是存在于构造函数上的一个对象,所有的实例对象都可以访问原型对象
+	// 可以在原型对象prototype添加共用的属性或者方法
+	// 变化的属性和方法写在构造器中 
+	function createPerson(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	createPerson.prototype.sayName = function(){// 可以在原型对象prototype添加共用的属性或者方法
+		console.log(11);
+		console.log("I am " +this.name);
+	}
+	createPerson.prototype.sayAge = function(){
+		//在原型对象prototype添加共用的属性或者方法,可以被所有通过函数new出来的实例访问的到
+		console.log("I am " +this.age+" years old")
+	}
+	
+	var person1 = new createPerson("tom",18);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1.LEGS);
+	console.log(person1);
+
+	var person2 = new createPerson("leo",20);
+	person2.sayName();
+	person2.sayAge();
+	console.log(person2.LEGS);
+	console.log(person2);
+	console.log(person1.sayName == person2.sayName);
+</script>
+</html>

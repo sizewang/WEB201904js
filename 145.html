@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>工厂函数创建对象</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 缺点
+	// 不能用new来创建对象
+	// 方法不能被实例共享,即每个对象实例都生成一个相同的方法
+
+	function createPerson(name,age){
+		var obj = {};
+		obj.name = name;
+		obj.age = age;
+		obj.sayName = function(){
+			console.log("I am" + this.name);
+		}
+		obj.sayAge = function(){
+			console.log("I am" + this.age + "years old");
+		}
+		return obj;
+	}
+
+	var person1 = createPerson("tom",18);// 方法不能被实例共享,即每个对象实例都生成一个相同的方法
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1);
+
+
+	var person2 = createPerson("tom",18);// 方法不能被实例共享,即每个对象实例都生成一个相同的方法
+	person2.sayName();
+	person2.sayAge();
+	console.log(person1);
+	
+</script>
+</html>
