@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>量词--验证邮箱</title>
+</head>
+<body>
+	<input type="text" name="" id="txt" autocomplete="off">
+	<button id="btn">检测邮箱</button>
+</body>
+<script type="text/javascript">
+	
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		var sVal = oTxt.value;
+		// var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		// var reg = /^\w+@[a-z0-9]+(\.[a-z]+){0,2}$/;
+		// var reg = /^(\d{4,9})+@qq\.com$/;
+		var reg = /^[0-9]+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		if(reg.test(sVal)){
+			alert("合法邮箱");
+		}else {
+			alert("不合法邮箱");
+		}
+	}	
+
+
+
+
+
+</script>
+</html>

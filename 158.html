@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>取反</title>
+</head>
+<body>
+	<textarea id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn">过滤</button>
+	<textarea id="txt2" cols="30" rows="10"></textarea>
+</body>
+<script type="text/javascript">
+	// var str = "abc 123 sdf";
+	// var reg1 = /[0-9]/g;
+	// var reg2 = /[a-z]/g;
+	// var reg3 = /[^0-9]/g;	//[^] 括号中任意一个原子之外的原子
+
+	// console.log(str.replace(reg1,"*"));
+	// console.log(str.replace(reg2,"*"));
+	// console.log(str.replace(reg3,"*"));
+
+	//[]代表一个原子
+
+
+	var oTxt1 = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn');
+	var oTxt2 = document.getElementById('txt2');
+
+	//[]  括号中任意一个原子,可以写区间(闭区间),如[a-z0-9]
+	//[^] 括号中任意一个原子之外的原子
+	oBtn.onclick = function(){
+		var reg = /<[^<>]+>/g;
+		oTxt2.value = oTxt1.value.replace(reg,"*");
+	}
+	
+</script>
+</html>

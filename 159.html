@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原子集合</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	// 原子集合
+	// . 除了回车和换行外的任意字符 等价[^\r\n]
+	// \d 任意数字,等价[0-9], \D 任意非数字 等价[^0-9]
+	// \w 任意数字,字母,下划线 等价[0-9a-zA-Z_],\W 任意非数字,字母,下划线 等价[^0-9a-zA-Z_]
+	// \s 空白符 等价于[\t\n\f\r],\S 非空白符 等价于[^\t\n\f\r]
+
+
+	var str = "abcd 1234 	fght 	6789 0000 _$#"
+	var reg1 = /[0-9]/g;	// 替换掉所有的数字
+	var reg2 = /\d/g;		// \d 任意数字,等价[0-9]
+	var reg3 = /[^0-9]/g;	// 任意非数字 
+	var reg4 = /\D/g;		// \D 任意非数字 等价[^0-9]
+	var reg5 = /./g;		// . 除了回车和换行外的任意字符 等价[^\r\n]
+	var reg6 = /[0-9a-zA-Z_]/g;// 任意数字,字母,下划线
+	var reg7 = /\w/g;		// \w 任意数字,字母,下划线 等价[0-9a-zA-Z_]
+	var reg8 = /[^0-9a-zA-Z_]/g;	//任意非数字,字母,下划线
+	var reg9 = /\W/g;		// \W 任意非数字,字母,下划线 等价[^0-9a-zA-Z_]
+	var reg10 = /\s/g;		// \s 空白符 等价于[\t\n\f\r]
+	var reg11 = /[\t\n\f\r\v]/g;//空白符
+	var reg12 = /\S/g;		// \S 非空白符 等价于[^\t\n\f\r]
+
+
+
+ 
+	console.log(str);
+	console.log(str.replace(reg1,"*"));
+	console.log(str.replace(reg2,"*"));
+	console.log(str.replace(reg3,"*"));
+	console.log(str.replace(reg4,"*"));
+	console.log(str.replace(reg5,"*"));
+	console.log(str.replace(reg6,"*"));
+	console.log(str.replace(reg7,"*"));
+	console.log(str.replace(reg8,"*"));
+	console.log(str.replace(reg9,"*"));
+	console.log(str.replace(reg10,"*"));
+	console.log(str.replace(reg11,"*"));
+	console.log(str.replace(reg12,"*"));
+
+</script>
+</html>

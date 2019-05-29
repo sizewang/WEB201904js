@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匹配汉字并且获取长度</title>
+</head>
+<body>
+	<!-- 匹配汉字并且获取长度:str.replace(/[\u4e00-\u9fa5]/g,'bb').length -->
+</body>
+<script type="text/javascript">
+	var str = "aafdgsgfhfg1234gdgsgdsg456"
+	var reg = /[a-z]/g;//全局匹配所有小写字母
+	console.log(str);
+	console.log(str.replace(reg,"*"));
+
+
+
+
+
+
+
+
+	var str = "你好hello世界";
+	var reg = /[\u4e00-\u9fa5]/g;
+	console.log(str); 
+	console.log(str.replace(reg,"*"));
+
+
+	function getLen(str){
+		return str.replace(/[\u4e00-\u9fa5]/g,"aa").length;
+	}
+
+	console.log(getLen(str));
+</script>
+</html>

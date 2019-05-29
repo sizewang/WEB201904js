@@ -90,7 +90,7 @@
 		this.bindEvent();
 	}
 
-	Tab.prototype.bindEvent = function(){
+	Tab.prototype.bindEvent = function(){//Tab.prototype上有bindEvent这个事件
 		//用变量把当前的Tab对象存下来
 		var _this = this;						//this的指向问题,谁在调用函数,函数内部的this就指向谁
 		for(var i = 0; i<this.aBtns.length; i++){
@@ -109,7 +109,7 @@
 			this.aContents[j].style.display = "none";//先清空所有
 		}
 		oBtn.className = "active";	//点击谁把active类选择器添加给谁
-		this.aContents[oBtn.index].style.display = "block";//点击谁把active添加给谁,把下面的显示出来
+		this.aContents[oBtn.index].style.display = "block";//点击谁把active添加给谁,把下面的w框显示出来
 	}
 
 	//可以访问Tab上的原型对象

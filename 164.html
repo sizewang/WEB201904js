@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匹配模式</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 贪婪模式
+	// 尽可能多的匹配(默认)
+	// 如'12345'.replace(/\d{2,4}/,'*')的结果是"*5"
+
+	// 非贪婪模式
+	// 尽可能少的匹配(在量词后添加?)
+	// 如'12345'.replace(/\d{2,4}?/,'*');的结果是"*345"
+
+
+	var str = "12345";
+	var reg1 = /\d{2,4}/;// 贪婪模式
+	var reg2 = /\d{2,4}?/;// 非贪婪模式		
+	var reg3 = /\d{2,4}?/g  //非贪婪模式   g=全局匹配
+
+
+
+	console.log(str);
+	console.log(str.replace(reg1,"*"));//*5
+	console.log(str.replace(reg2,"*"));//*345
+	console.log(str.replace(reg3,"*"));//**5
+
+
+</script>
+</html>

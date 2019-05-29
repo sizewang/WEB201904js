@@ -36,7 +36,7 @@
 
 
 	oBtn.onclick = function(){
-		var val = oTxt.value;
+		var val = oTxt.value;//获取输入框的值
 		var oLi = document.createElement('li');//生成li
 		var reg = /淘宝|某宝|掏宝/g;
 		var newVal = val.replace(reg,"*");
