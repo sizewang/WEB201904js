@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则对象的方法--reg.exec(str)</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// reg.exec(str)
+	// exec方法对字符串执行搜索,并更新正则对象上的lastIndex属性,如果没有匹配的返回null,有的话返回一个数组
+	// 	数组的第0个元素是匹配的内容,如果有分组,从下标是1开始是对应分组的内容
+	// 	index 是匹配内容第一个字符的位置
+	// 	input 是被搜索的字符串
+	// 	groups 存放着每个命名分组的名称以及它们匹配到的值,如果没有命名分组则为undefined,命名捕获分组自身的语法是 (?<name>...)，比普通的分组多了一个 ?<name> 
+	// 全局匹配
+	// 	每一次匹配后正则对象上的lastIndex属性会更改,改为匹配内容的最后一个字符的下一个位置
+	// 	举例:
+	// 	var reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g;
+	// 	var str = 'a2018-05-10b';
+	// 	console.log(reg.lastIndex);//0
+	// 	console.log(reg.exec(str));//["2018-05-10", "2018", "05", "10", index: 1, input: "a2018-05-10b", groups: {year: "2018", month: "05", day: "10"}]
+	// 	console.log(reg.lastIndex);//11
+	// 	console.log(reg.exec(str));//null
+	// 	console.log(reg.lastIndex);//0
+	// 	console.log(reg.exec(str));//["2018-05-10", "2018", "05", "10", index: 1, input: "a2018-05-10b", groups: {year: "2018", month: "05", day: "10"}]
+	// 非全局匹配
+	// 	lastIndex始终是0,也就是说始终从第0个元素开始查找
+
+	var str = "a2019-05-29b2019-05-30";
+	// var reg = /\d{4}-\d{2}-\d{2}/;
+	var reg = /(?<years>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g;//分组
+
+
+	// console.log(str.replace(reg,"*"));
+	console.log(str);
+	console.log(reg.lastIndex);
+	console.log(reg.exec(str));
+	console.log(reg.lastIndex);
+
+</script>
+</html>

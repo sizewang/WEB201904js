@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单元素的属性</title>
+</head>
+<body>
+	<!-- 表单元素的属性
+
+	禁用表单元素
+		表单元素.disabled = true;
+			针对所有表单元素
+			值不会被提交
+		表单元素.readOnly = true;
+			只针对input(text/password)/textarea
+			值会被提交 -->
+
+	<!-- 复选框选中属性 checked,如设置选中 aCheckBox[0].checked = true
+	单选框选中属性 checked,如设置选中 aRadio[0].checked = true
+	下拉框选中属性 selected,如设置某个选项选中 oSelect.options[i].selected = true -->
+	<form action="http://www.kuazhu.com" id="form1" target="_blank">
+		<div>
+			用户名：<input type="text" name="username" value="tom">
+			密码：<input type="password" name="">
+		</div>
+		<div>
+		性别：
+		男：<input type="radio" name="sex" value="male">
+		女：<input type="radio" name="sex" value="female">
+	</div>
+	<div>
+		爱好：
+		<input type="checkbox" name="hobby" value="basketball">篮球
+		<input type="checkbox" name="hobby" value="football">足球
+	</div>
+	<div>
+		<select name="city" id="cy">
+			<option value="bj">北京</option>
+			<option value="sh">上海</option>
+			<option value="gz">广州</option>
+			<option value="sz">深圳</option>
+		</select>
+	</div>
+	<div>
+		<input type="submit" name="" value="提交"> 	
+	</div>
+	</form>
+
+	<form>
+		
+	</form>
+</body>
+<script type="text/javascript">
+	// document.forms 代表页面所有的表单集合,document.forms[0]页面中的第一个表单
+	// 表单.elements代表了表单中的所有表单元素集合
+	var aForms = document.forms;
+	var oForm = aForms[0];
+	var oUsername = oForm.username;
+
+	// 禁用表单元素
+	// 	表单元素.disabled = true;
+	// 		针对所有表单元素
+	// 		值不会被提交
+	// oUsername.disabled = true;
+
+
+
+	// 禁用表单元素
+	// 表单元素.readOnly = true;
+	// 	只针对input(text/password)/textarea
+	// 	值会被提交
+	oUsername.readOnly = true;
+
+
+	// 单选框选中属性 checked,如设置选中 aRadio[0].checked = true
+	var aSex = oForm.sex;
+	aSex[0].checked = true; 
+
+	
+	// 复选框选中属性 checked,如设置选中 aCheckBox[0].checked = true
+	var aHobby = oForm.hobby;
+	aHobby[0].checked = true;
+	aHobby[1].checked = true;
+
+
+	// 下拉框选中属性 selected,如设置某个选项选中 oSelect.options[i].selected = true
+	var oCity = oForm.city;
+	oCity.options[1].selected = true;
+
+
+</script>
+</html>

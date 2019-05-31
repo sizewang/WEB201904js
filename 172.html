@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则对象的方法--reg.test(str)</title>
+</head>
+<body>
+<!-- test方法测试字符串是否有匹配到正则的字符串,有返回true,没有返回false  -->
+</body>
+<script type="text/javascript">
+	// reg.test(str)
+	// test方法测试字符串是否有匹配到正则的字符串,有返回true,没有返回false 
+	// 全局匹配
+	// 	每一次匹配后正则对象上的lastIndex属性会更改,改为匹配内容的最后一个字符的下一个位置,所以结果会不可靠,一般使	  用test方法时建议不要全局匹配
+	// 	举例:
+	// 	var reg = /[a-z]/g;
+	// 	console.log(reg.lastIndex);//0
+	// 	console.log(reg.test('a1b2'));//true 从下标0开始匹配到a
+	// 	console.log(reg.lastIndex);//a的下一个位置是1
+	// 	console.log(reg.test('a1b2'));//true 从下标1开始匹配到b
+	// 	console.log(reg.lastIndex);//b的下一个位置是3
+	// 	console.log(reg.test('a1b2'));//false 从下标3开始匹配,没有字符
+	// 	console.log(reg.lastIndex);//匹配结束,lastIndex重置为0	
+	// 非全局匹配
+	// 	lastIndex始终是0,也就是说始终从第0个元素开始查找
+
+
+
+	var str = "a1b2c34";
+	var reg = /[a-z]/;
+
+	console.log(str);
+	console.log(reg.lastIndex);
+	console.log(reg.test(str));
+
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正向前瞻--负向前瞻</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 正向前瞻 exp(?=assert)
+	// 匹配到exp的内容后再看前面的内容符合不符合assert,符合的话就匹配exp的内容
+	// 举例:字母后面是数字的字母,'a1b2c*d&'.replace(/[a-z](?=\d)/g,'$'),结果为:"$1$2c*d&"
+
+	// 负向前瞻 exp(?!assert)
+	// 匹配到exp的内容后再看前面的内容符合不符合assert,不符合的话就匹配exp的内容
+	// 举例:字母后面不是数字的字母,'a1b2c*d&'.replace(/[a-z](?!\d)/g,'$'),结果为:"a1b2$*$&"
+
+	var str = "a1b2c3d4f5g6w$#@";
+	var reg1 = /[a-z](?=\d)/g;	//匹配字母	字母的前面是数字的符合要求	正向前瞻 exp(?=assert)
+	var reg2 = /[a-z](?!\d)/g;	//匹配字母	字母的前面不是数字的符合要求	负向前瞻 exp(?!assert)
+
+	console.log(str);
+	console.log(str.replace(reg1,"*"));
+	console.log(str.replace(reg2,"*"));
+
+</script>
+</html>

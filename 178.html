@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单提交和重置</title>
+</head>
+<body>
+	<form action="https://www.kuazhu.com" target="_blank">
+		<div>
+			<input type="text" name="username">
+		</div>
+		<div>
+			<input type="submit">
+			<!-- <input type="image" src="images/9.png"> -->
+			<button type="submit">btn submit</button>
+		</div>
+		<div>
+			<input type="reset"> 	<!-- HTML按钮默认重置	input type="reset" -->
+			<button type="reset">btn reset</button><!-- HTML按钮默认重置	button type="reset" -->
+		</div>
+	</form>
+	<button id="btn">提交</button>
+	<button id="btn2">重置</button>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn');
+	var oBtn2 = document.getElementById('btn2');
+	var oForm = document.forms[0];
+
+	oForm.onsubmit = function(){	//form的submit()方法提交  form的submit()方法不会触发form.onsubmit事件
+		console.log("oForm.onsubmit....");
+	}
+	oBtn.onclick = function(){	//点击按钮时表单提交
+		oForm.submit();		//form的submit()方法不会触发form.onsubmit事件
+	}
+	oForm.onreset = function(){		// 	form的reset()方法会触发form.onrest事件 
+		console.log("oForm.onreset....");
+	}
+	oBtn2.onclick = function(){	//点击按钮时表单重置
+		oForm.reset();		// 	form的reset()方法会触发form.onrest事件
+	}
+</script>
+</html>

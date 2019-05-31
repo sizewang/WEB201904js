@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取表单元素</title>
+</head>
+<body>
+	<form action="http://www.kuazhu.com" id="form1">
+		<div>
+			用户名:<input type="text" name="username" autocomplete="off">
+		</div>
+		<div>
+			密码:<input type="password" name="password" autocomplete="off">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	// document.forms 代表页面所有的表单集合,document.forms[0]页面中的第一个表单
+	// 表单.elements代表了表单中的所有表单元素集合
+	var aForms = document.forms;
+	var oForm = aForms[0];
+	var aElements = oForm.elements					
+
+
+	// 获取一个表单中的元素的方法
+	// 表单元素集合[下标]
+	// 表单元素集合["元素名称"]
+	// 表单元素集合.元素名称
+	// 表单.元素名称
+	// var oInput = oForm.elements[0];
+	// var oInput = oForm.elements["username"];
+	// var oInput = oForm.elements.username;
+	var oInput = oForm.username;
+
+	console.log(oForm);
+	console.log(aElements);
+	console.log(oInput);
+</script>
+</html>

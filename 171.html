@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则对象的属性</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 正则对象的属性
+	// lastIndex 下一个开始匹配的索引值
+	// source 正则的文本字符串 
+
+	var str = "asd hjk laki"
+	var reg = /a/g;
+
+	console.log(str);
+	console.log(reg.lastIndex);//0
+	console.log(str.replace(reg,"*"));
+	console.log(reg.lastIndex);
+	console.log(str.replace(reg,"*"));
+
+</script>
+</html>

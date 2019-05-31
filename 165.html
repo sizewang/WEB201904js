@@ -18,7 +18,9 @@
 		// var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
 		// var reg = /^\w+@[a-z0-9]+(\.[a-z]+){0,2}$/;
 		// var reg = /^(\d{4,9})+@qq\.com$/;
-		var reg = /^[0-9]+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		// var reg = /^[0-9]+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		var reg = /^[a-z0-9]+@[a-z0-9-]+\.[a-z]{2,4}$/;
+		
 		if(reg.test(sVal)){
 			alert("合法邮箱");
 		}else {

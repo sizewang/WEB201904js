@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修正模式</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 修正模式
+	// i(ignoreCase) 忽略大小写,默认区分大小写,可以通过正则对象上的ignoreCase属性查看
+	// g(global) 匹配所有的,默认只找到第一个,可以通过正则对象上的global属性查看
+	
+	var str = "AabcdABCD 123 fghjqWER 456";
+	var reg1 = /[a-z]/;
+	var reg2 = /[a-zA-Z]/g;
+	var reg3 = /[a-z]/gi;	// i忽略大小写	ignore忽略
+
+	console.log(str);
+
+	console.log(str.replace(reg1,"*"));
+	console.log(str.replace(reg2,"*"));
+	console.log(str.replace(reg3,"*"));
+
+
+
+
+
+	
+</script>
+</html>
