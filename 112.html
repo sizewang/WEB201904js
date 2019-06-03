@@ -22,22 +22,22 @@
 	<div id="box"></div>
 </body>
 <script type="text/javascript">
-	var oBox = document.getElementById('box');
+var oBox = document.getElementById('box');
 
-	oBox.onmousedown = function(ev){
-		// console.log(ev.clientX,ev.clientY);
-		var disX = ev.clientX - oBox.offsetLeft;
-		var disY = ev.clientY - oBox.offsetTop;
+oBox.onmousedown = function(ev){
+	// console.log(ev.clientX,ev.clientY);
+	var disX = ev.clientX - oBox.offsetLeft;
+	var disY = ev.clientY - oBox.offsetTop;
 
-		document.onmousemove = function(ev){
-			oBox.style.left = ev.clientX - disX + "px";
-			oBox.style.top = ev.clientY - disY + "px";
-		}
+document.onmousemove = function(ev){
+	oBox.style.left = ev.clientX - disX + "px";//盒子左边到浏览器的距离=鼠标到浏览器左的距离-鼠标到盒子左的距离
+	oBox.style.top = ev.clientY - disY + "px";//盒子顶部到浏览器的距离=鼠标到浏览器顶的距离-鼠标到盒子顶的距离
+}
 
-		document.onmouseup = function(){
-			document.onmousemove = null;
-			document.onmouseup = null;
-		}
-	} 
+	document.onmouseup = function(){
+		document.onmousemove = null;
+		document.onmouseup = null;
+	}
+} 
 </script>
 </html>
