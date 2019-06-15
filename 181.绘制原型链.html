@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>181.绘制原型链.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(name,age){
+		this.name = name;
+		this.age = age
+	}
+	Person.prototype.showName = function(){
+		console.log("I am " + this.name);
+	}
+	Person.prototype.showAge = function(){
+		console.log("I  am " + this.age +" year old");
+	}
+	Person.prototype.LEGS = 2;
+
+
+
+
+	var p1 = new Person("tom",20);
+	p1.showName();	//先在自身寻找showName方法,如果没有向上沿着原型链寻找
+	p1.showAge();	//先在自身寻找showAge方法,如果没有向上沿着原型链寻找
+	console.log(p1.LEGS);//2
+	console.log(p1);
+	console.log(p1.toString());
+	console.log(p1.test());//在整个原型链上都找不到   会报错
+
+
+
+	var p2 = new Person("leo",20);
+	p2.showName();
+	p2.showAge();
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>185.属性的判断.html</title>
+</head>
+<body>
+	<!-- 属性的判断
+	判断对象实例上是否有自己实例上指定的属性,如obj1.hasOwnProperty('name')
+	判断对象实例的原型链上是否有指定的属性,如"LEGS" in obj1;
+	判断属性只在原型上有:return !obj.hasOwnProperty(name) && (name in obj); -->
+</body>
+<script type="text/javascript">
+	function Person(name,age){//构造函数
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.showName = function(){
+		console.log("I am " + this.name);
+	}
+	Person.prototype.showAge = function(){
+		console.log("I  am " + this.age +" years  old");
+	}
+	Person.prototype.LEGS = 2;
+
+	var p1 = new Person("tom",18);//实例对象
+	console.log(p1);
+	console.log(p1.name);
+	console.log(p1.LEGS);
+	console.log(p1.age);
+
+	
+
+	function isInprototype(obj,attr){
+		return !obj.hasOwnProperty(attr) && (attr) && (attr in obj);
+	}
+	console.log(p1.hasOwnProperty("name"));//判断对象实例上是否有自己实例上指定的属性
+	console.log(p1.hasOwnProperty("age"));
+	console.log(p1.hasOwnProperty("LEGS"));//判断对象实例上是否有自己实例上指定的属性
+
+</script>
+</html>

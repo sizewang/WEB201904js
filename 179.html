@@ -2,9 +2,86 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>6.3考核</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			margin: 100px auto;
+			background: red;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="box"></div>
 </body>
+<script type="text/javascript">
+	// var oBox = document.getElementById('box');
+	// var ev = new Event('test',{
+	// 	bubbles: 'true',
+ 	// cancelable: 'true',
+	// });
+	
+	// oBox.addEventListener('test', function(ev){
+	// 	console.log(event.bubbles);
+ 	// 	console.log(event.cancelable);
+ 	//  console.log(event.detail);
+
+	// },false);
+
+	// oBox.dispatchEvent(ev);
+
+
+
+
+
+
+	 // //document上绑定自定义事件click
+  //   document.addEventListener('click', function(ev){
+  //       alert(event.name +' ，'+ event.age  + event.game);
+  //   }, false);
+ 
+  //   //创建event的对象实例。
+  //   var event = document.createEvent('HTMLEvents');
+
+  //   // 3个参数：事件类型，是否冒泡，是否阻止浏览器的默认行为
+  //   event.initEvent("click", true, true);
+
+  //   //自己定义属性
+  //   event.name = 'hello,我是Jak';
+  //   event.age = '我今天21岁';
+ 	// event.game = ' 喜欢玩DNF';
+
+  //   //触发自定义事件click
+  //   document.dispatchEvent(event);
+
+
+
+
+ 	//  自定义事件步骤
+	// 1.创建事件对象: var 事件对象 = new Event(自定义事件类型)
+	// 2.监听事件 dom.addEventListener(自定义事件类型,function(){})
+	// 3.触发事件dom.dispatchEvent(事件对象)
+
+
+
+
+  		var oBox = document.getElementById('box');
+		var ev = new Event('test');
+		oBox.addEventListener('test',function(){
+			alert('hello word');
+		})
+		oBox.dispatchEvent(ev);
+
+
+
+
+
+</script>
 </html>

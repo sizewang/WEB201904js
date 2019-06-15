@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>184.对象属性的删除.html</title>
+</head>
+<body>
+	<!-- 属性的删除
+	通过delete 删除属性
+	删除实质是判断有没有该属性，如果有删除返回真，若没有，直接返回真
+	如果删除了原型上的属性，所有实例都访问不到该属性 -->
+</body>
+<script type="text/javascript">
+	function Person(name,age){//构造函数
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.showName = function(){
+		console.log("I am " + this.name);
+	}
+	Person.prototype.showAge = function(){
+		console.log("I  am " + this.age +" years  old");
+	}
+	Person.prototype.LEGS = 2;
+
+	var p1 = new Person("tom",20);//实例对象
+	console.log(p1);
+	p1.sex = "male";
+	console.log(delete p1.age);//删除成功后返回true
+	console.log(delete p1.test);//若没有找到或者没有, 直接返回true
+	console.log(p1);
+
+
+	console.log(delete Person.prototype.LEGS);
+	console.log(p1.LEGS);
+
+	var p2 = new Person("leo",66);
+	console.log(p2.LEGS);//LEGS被删除了  实例对象找不到所有会报undefined
+</script>
+</html>

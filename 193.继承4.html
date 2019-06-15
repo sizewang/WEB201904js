@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>193.继承4.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function Person(){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.showName = function(){
+		console.log('I am' + this.name);
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am' + this.age + 'years old');
+	}
+
+	function Student(name,age,major){
+		//属性继承
+		Person.call(this,name,age);
+		this.major = major;
+	}
+
+	Student.prototype = new Person;
+	
+
+
+
+
+	// for(var attr in Person.prototype){
+
+	// }
+</script>
+</html>
