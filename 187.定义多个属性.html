@@ -7,4 +7,37 @@
 <body>
 	
 </body>
+<script type="text/javascript">
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	var p1 = new Person("tom",18);
+	Object.defineProperties(p1,{
+		LEGS:{
+			value:2,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		},
+		HANDS:{
+			value:2,
+			enumerable:false,
+			writable:true,
+			configurable:true
+		},
+		MOUTH:{
+			value:1,
+			enumerable:true,
+			writable:false,
+			configurable:false
+		}
+	})
+	console.log(p1);
+
+	for(attr in p1){
+		console.log(attr,p1[attr]);
+	}
+</script>
 </html>

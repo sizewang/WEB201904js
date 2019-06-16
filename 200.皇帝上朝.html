@@ -9,22 +9,25 @@
 </body>
 <script type="text/javascript">
 	(function(w){
-		var King = null;
-		function king(name){
+		var king = null;
+		function King(name){
 			if(!king){
-				console.log(11)
+				// console.log(11)
 				this.name = name;
-				this.id = math.random();
+				this.id = Math.random();
+				king = this;
 			}
+			return king;
 		}
-		king.prototype = {
-			constructor:king,
+
+		King.prototype = {
+			constructor:King,
 			work:function(){
 				console.log(this.name + this.id + "说: 有本早奏,无本退朝!!!")
 			}
 		}
-		w.king = king;
-	})(window)
+		w.King = King;
+	})(window);
 
 	for(var i = 0;i<5;i++){
 		new King("康熙皇帝").work();
