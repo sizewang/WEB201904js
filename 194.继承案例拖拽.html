@@ -3,6 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>194.继承案例拖拽.html</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
 </head>
 <body>
 	
@@ -10,19 +16,25 @@
 <script type="text/javascript">
 	function Drag(options){
 		//1.罗列属性
-		this.Box = null;
+		this.oBox = null;
 		this.width = options.width;
 		this.height = options.height;
 		this.background = options.background;
-
+		this.disX = 0;
+		this.disY = 0;
 		//2.初始化
 		this.init();
+
+		//3.绑定事件
+		this.bindEvent();
 	}
+
 	Drag.prototype.init = function(){
 		this.oBox = document.createElement('div');
 		this.oBox.style.width = this.width + 'px';
 		this.oBox.style.height = this.height + 'px';
 		this.oBox.style.background = this.background;
+		this.oBox.style.position = "absolute";
 		this.oBox.style.top = 0;
 		this.oBox.style.left = 0;	
 
@@ -32,13 +44,20 @@
 		this.oBox.onmousedown = function(ev){
 			var oEvent = ev || event;
 			this.disX = oEvent.clientX - this.oBox.offsetLeft;
-			this.disY = oEvent.clienY - this.oBox.offsetTop;
+			this.disY = oEvent.clientY - this.oBox.offsetTop;
 
-
-			document.onmousemove = function(){
-				
-			}
-		}
+			document.onmousemove = this.fnMove.bind(this);
+			document.onmouseup = this.fnUp;
+		}.bind(this)
+	}
+	Drag.prototype.fnMove = function(ev){
+		var oEvent = ev || event;
+		this.oBox.style.left = oEvent.clientX - this.disX + "px";
+		this.oBox.style.top = oEvent.clientY - this.disY + "px";
+	}
+	Drag.prototype.fnUp = function(){
+		document.onmousemove = null;
+		document.onmouseup = null;
 	}
 
 
@@ -48,7 +67,11 @@
 		height:100,
 		background:"red"
 	});
-
+	new Drag({
+		width:200,
+		height:200,
+		background:"blue"
+	});
 
 </script>
 </html>
