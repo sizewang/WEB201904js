@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>右键菜单</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		#menu{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 250px;
+			height: 300px;
+			/*border-radius: 50%;*/
+			background: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="menu"></div>
+</body>
+<script type="text/javascript">
+	var oMenu = document.getElementById('menu');
+
+	document.oncontextmenu = function(ev){
+		oMenu.style.display = "block";
+		oMenu.style.top = ev.clientY + "px";
+		oMenu.style.left = ev.clientX + "px";
+
+		return false;//清除默认行为
+	}
+
+	oMenu.onclick = function(ev){
+		ev.stopPropagation();
+	}
+
+	document.onclick = function(){
+		oMenu.style.display = "none";
+	}
+</script>
+</html>
