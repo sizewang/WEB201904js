@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js节点</title>
+</head>
+<body>
+
+</body>
+<script>
+    let oDiv = document.createElement("div");
+
+    oDiv.style.width = "100px";
+    oDiv.style.height = "100px";
+    oDiv.style.backgroundColor = "red";
+
+    document.body.appendChild(oDiv);//添加节点
+    // document.body.removeChild(oDiv);//移除节点
+
+
+    let oDiv1 = document.createElement("p");
+    oDiv1.style.width = "100px";
+    oDiv1.style.height = "100px";
+    oDiv1.style.backgroundColor = "blue";
+    document.body.insertBefore(oDiv1, oDiv);
+
+
+</script>
+</html>
